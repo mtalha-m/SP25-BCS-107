@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.expense</groupId>
+    <artifactId>personal-expense-tracker</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- JavaFX Controls -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>21.0.1</version>
+        </dependency>
+
+        <!-- JavaFX FXML -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>21.0.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>Main</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+<!--        ```-->
+
+<!--        ### **Step 3: IntelliJ will detect Maven**-->
+<!--        - A popup will appear in the bottom-right corner saying "Maven projects need to be imported"-->
+<!--        - Click **Import Changes** or **Enable Auto-Import**-->
+<!--        - Wait for dependencies to download (you'll see progress in the bottom status bar)-->
+
+<!--        ### **Step 4: Verify Maven is Working**-->
+<!--        1. Look for a **Maven** tab on the right side of IntelliJ-->
+<!--        2. Click it and you should see your project structure-->
+<!--        3. Expand **Lifecycle** to see Maven commands-->
+
+<!--        ### **Step 5: Run Your Project**-->
+<!--        Right-click `Main.java` → **Run 'Main.main()'**-->
+
+<!--        -&#45;&#45;-->
+
+<!--        ## **Method 2: If Step 3 Doesn't Work**-->
+
+<!--        ### **Manual Import:**-->
+<!--        1. Right-click on `pom.xml`-->
+<!--        2. Select **Add as Maven Project**-->
+<!--        3. Wait for IntelliJ to sync-->
+
+<!--        OR-->
+
+<!--        1. **File** → **Project Structure** (Ctrl+Alt+Shift+S)-->
+<!--        2. **Modules** → Click **+** → **Import Module**-->
+<!--        3. Select your `pom.xml` file-->
+<!--        4. Click **OK**-->
+
+<!--        -&#45;&#45;-->
+
+<!--        ## **Troubleshooting**-->
+
+<!--        ### **If imports still show errors after Maven sync:**-->
+
+<!--        1. **Invalidate Caches:**-->
+<!--        - **File** → **Invalidate Caches** → Check **Invalidate and Restart**-->
+
+<!--        2. **Reimport Maven:**-->
+<!--        - Right-click `pom.xml` → **Maven** → **Reload Project**-->
+
+<!--        3. **Check Java Version:**-->
+<!--        - Make sure `maven.compiler.source` and `maven.compiler.target` in `pom.xml` match your JDK-->
+<!--        - **File** → **Project Structure** → **Project** → Check SDK version-->
+
+<!--        ### **If you see "Cannot resolve symbol 'javafx'":**-->
+<!--        - Wait for Maven to finish downloading (check bottom-right corner)-->
+<!--        - Click the Maven tab → Click refresh icon (🔄)-->
+
+<!--        -&#45;&#45;-->
+
+<!--        ## **Alternative: Quick Fix Without Maven**-->
+
+<!--        If you want to run it immediately without Maven:-->
+
+<!--        ### **Add JavaFX manually:**-->
+<!--        1. Download JavaFX SDK from https://gluonhq.com/products/javafx/-->
+<!--        2. Extract it somewhere (e.g., `C:\javafx-sdk-21`)-->
+<!--        3. **File** → **Project Structure** → **Libraries**-->
+<!--        4. Click **+** → **Java** → Select the `lib` folder from JavaFX SDK-->
+<!--        5. Click **OK**-->
+<!--        6. **Run** → **Edit Configurations**-->
+<!--        7. Add to **VM options**:-->
+<!--        ```-->
+<!--        &#45;&#45;module-path "C:\javafx-sdk-21\lib" &#45;&#45;add-modules javafx.controls,javafx.fxml-->
